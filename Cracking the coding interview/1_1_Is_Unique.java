@@ -29,7 +29,7 @@ boolean isUniqueChars(String tr){
 //With O(1) extra space using bitwise however, only
 //can be use when the input only use lowercase 
 //letter a through z
-boolean is isUniqueChars(String str){
+boolean int isUniqueChars(String str){
     int checker = 0;
     for(int i = 0;i<str.length();i++){
         int val = str.charAt(i) - 'a';
