@@ -1,23 +1,22 @@
 
-public class RunnableThreadExample implements Runnable{
-	public int count = 0;
+public class ThreadExample_extend extends Thread{
+	int count = 0;
 	public void run() {
-		System.out.println("RunnableThread starting.");
+		System.out.println("Thread starting extends");
 		try {
 			while(count<5) {
-				Thread.sleep(150);
+				Thread.sleep(500);
+				System.out.println("In Thread, count is "+count);
 				count++;
-				System.out.println(count);
 			}
 		}catch(InterruptedException exc) {
-			System.out.println("RunnableThread interrupted");
+			System.out.println("Thread Interrupted");
 		}
 		System.out.println("RunnableThread terminating");
 	}
 	public static void main(String[] args) {
-		RunnableThreadExample obj = new RunnableThreadExample();
-		Thread thread = new Thread(obj);
-		thread.start();
+		ThreadExample_extend obj = new ThreadExample_extend();
+		obj.start();
 		
 		while(obj.count!=5) {
 			try {
